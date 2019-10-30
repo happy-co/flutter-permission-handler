@@ -97,7 +97,7 @@ class PermissionGroup {
 
   /// Android: Nothing
   /// iOS: Photos
-  static const PermissionGroup photos = PermissionGroup._(3);;
+  static const PermissionGroup photos = PermissionGroup._(3);
 
   /// Android: External Storage
   /// iOS: Nothing
