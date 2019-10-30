@@ -41,7 +41,6 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 public class PermissionHandlerPlugin implements MethodCallHandler {
   private static final String LOG_TAG = "permissions_handler";
   private static final int PERMISSION_CODE = 24;
-  private static final int PERMISSION_CODE_IGNORE_BATTERY_OPTIMIZATIONS = 5672353;
 
   //PERMISSION_GROUP
   private static final int PERMISSION_GROUP_CAMERA = 1;
@@ -116,18 +115,6 @@ public class PermissionHandlerPlugin implements MethodCallHandler {
         } else {
           return false;
         }
-      }
-    });
-
-    registrar.addActivityResultListener(new ActivityResultListener() {
-      @Override
-      public boolean onActivityResult(int requestCode, int responseCode, Intent intent) {
-        if (requestCode == PERMISSION_CODE_IGNORE_BATTERY_OPTIMIZATIONS) {
-          permissionHandlerPlugin.handleIgnoreBatteryOptimizationsRequest(responseCode == Activity.RESULT_OK);
-          return true;
-        }
-
-        return false;
       }
     });
   }
@@ -333,9 +320,6 @@ public class PermissionHandlerPlugin implements MethodCallHandler {
       if (permission == PERMISSION_GROUP_MICROPHONE) {
         if (!mRequestResults.containsKey(PERMISSION_GROUP_MICROPHONE)) {
           mRequestResults.put(PERMISSION_GROUP_MICROPHONE, toPermissionStatus(grantResults[i]));
-        }
-        if (!mRequestResults.containsKey(PERMISSION_GROUP_SPEECH)) {
-          mRequestResults.put(PERMISSION_GROUP_SPEECH, toPermissionStatus(grantResults[i]));
         }
       } else if (!mRequestResults.containsKey(permission)) {
         mRequestResults.put(permission, toPermissionStatus(grantResults[i]));
