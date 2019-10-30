@@ -101,10 +101,10 @@ class PermissionGroup {
 
   /// Android: External Storage
   /// iOS: Nothing
-  static const PermissionGroup storage = PermissionGroup._(14);
+  static const PermissionGroup storage = PermissionGroup._(4);
 
   /// The unknown permission only used for return type, never requested
-  static const PermissionGroup unknown = PermissionGroup._(16);
+  static const PermissionGroup unknown = PermissionGroup._(5);
 
   static const List<PermissionGroup> values = <PermissionGroup>[
     camera,
