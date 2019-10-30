@@ -43,12 +43,12 @@ public class PermissionHandlerPlugin implements MethodCallHandler {
   private static final int PERMISSION_CODE = 24;
 
   //PERMISSION_GROUP
-  private static final int PERMISSION_GROUP_CAMERA = 1;
-  private static final int PERMISSION_GROUP_MEDIA_LIBRARY = 2;
-  private static final int PERMISSION_GROUP_MICROPHONE = 3;
-  private static final int PERMISSION_GROUP_PHOTOS = 4;
-  private static final int PERMISSION_GROUP_STORAGE = 5;
-  private static final int PERMISSION_GROUP_UNKNOWN = 6;
+  private static final int PERMISSION_GROUP_CAMERA = 0;
+  private static final int PERMISSION_GROUP_MEDIA_LIBRARY = 1;
+  private static final int PERMISSION_GROUP_MICROPHONE = 2;
+  private static final int PERMISSION_GROUP_PHOTOS = 3;
+  private static final int PERMISSION_GROUP_STORAGE = 4;
+  private static final int PERMISSION_GROUP_UNKNOWN = 5;
 
   private PermissionHandlerPlugin(Registrar mRegistrar) {
     this.mRegistrar = mRegistrar;
